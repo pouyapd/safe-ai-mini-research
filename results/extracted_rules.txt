@@ -1,0 +1,7 @@
+Excerpt of extracted decision rules (Decision Tree depth=8):
+
+- If Translational Velocity (v) <= 0.30 → class: Fail
+- Else if v > 0.30 and Orientation (θ) <= -0.24 → class: Fail
+- Else if v > 0.30 and -0.24 < θ <= 0.69 and |ω| <= 0.59 and v <= 0.44 → class: Success
+- Else if Orientation (θ) > 0.69 and ω <= -0.98 → class: Success
+(...rules truncated for brevity...)
