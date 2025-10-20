@@ -1,0 +1,5 @@
+Feature Importance (Decision Tree depth=8)
+
+Orientation (θ): 0.457
+Translational Velocity (v): 0.454
+Rotational Velocity (ω): 0.089
