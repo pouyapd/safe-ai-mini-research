@@ -6,6 +6,12 @@
 
 ---
 
+## Related Work
+- 🧠 *Safe and Explainable Trajectory Prediction for Smart Wheelchairs* — Mini research summary (this repository)  
+- 📘 *MSc Thesis (in progress): Interpretable AI Models for Safety Supervision*
+
+---
+
 ## Project Overview
 This project investigates how to make neural network models more **reliable and understandable** when used in safety-critical systems such as **autonomous or smart wheelchairs**.  
 The main goal is to understand **when and why** a neural network might generate unsafe outputs and to design an interpretable supervisor that can **detect risky predictions before they cause unsafe behavior**.  
