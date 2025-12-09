@@ -103,41 +103,40 @@ These highlight risk zones and improve system trust.
 
 ---
 
-## 📂 Repository Contents
+## 5. Repository Contents
 
 The project file structure is organized as follows:
 
 ```text
 .
 ├── results/
-│   ├── summary_table.csv          # Aggregate metrics for all runs
-│   ├── model_metrics.csv          # Detailed performance metrics of the model
-│   ├── feature_importances.txt    # Ranked list of input features
-│   └── extracted_rules.txt        # Logical rules extracted from the model
+│   ├── summary_table.csv
+│   ├── model_metrics.csv
+│   ├── feature_importances.txt
+│   └── extracted_rules.txt
 │
 ├── trajectory_analysis/
 │   ├── exp1_input_sensitivity/
-│   │   ├── exp1_analysis.ipynb          # Notebook for input sensitivity analysis
-│   │   ├── theta_vs_distance.png        # Plot: Theta angle over distance
-│   │   ├── velocity_vs_distance.png     # Plot: Velocity profile over distance
-│   │   ├── omega_vs_distance.png        # Plot: Angular velocity over distance
-│   │   ├── failure_distance_boxplot.png # Distribution of failure distances
-│   │   ├── exp1_theta_bins.csv          # Binned data for theta analysis
-│   │   ├── exp1_velocity_bins.csv       # Binned data for velocity analysis
-│   │   └── exp1_omega_bins.csv          # Binned data for omega analysis
-│   │
+│   │   ├── exp1_analysis.ipynb
+│   │   ├── theta_vs_distance.png
+│   │   ├── velocity_vs_distance.png
+│   │   ├── omega_vs_distance.png
+│   │   ├── failure_distance_boxplot.png
+│   │   ├── exp1_theta_bins.csv
+│   │   ├── exp1_velocity_bins.csv
+│   │   └── exp1_omega_bins.csv
+│
 │   ├── exp2_goal_difficulty/
-│   │   ├── exp2_analysis.ipynb          # Notebook for goal difficulty analysis
-│   │   ├── goal_success_heatmap.png     # Visual heatmap of success rates
-│   │   ├── goal_difficulty_map.png      # Map visualizing difficulty zones
-│   │   └── goal_success_table.csv       # Raw data for success rates
-│   │
-│   └── failure_distance_stats.csv       # Overall statistical summary of failure distances
+│   │   ├── exp2_analysis.ipynb
+│   │   ├── goal_success_heatmap.png
+│   │   ├── goal_difficulty_map.png
+│   │   └── goal_success_table.csv
+│
+│   └── failure_distance_stats.csv
 │
 └── figures/
     └── (feature importance, confusion matrices, etc.)
-
----
+```
 
 ## 6. Applications
 This work supports:
@@ -147,11 +146,11 @@ This work supports:
 - Navigation risk analysis  
 - Model-monitoring and OOD detection pipelines  
 
-Core principles generalize to any **safety-critical AI system**.
+The core principles generalize to any **safety-critical AI system** where robustness and interpretability are required.
 
 ---
 
 ## 7. Disclaimer
 This repository contains only **derived results, summaries, and public-safe visualizations**.  
-No confidential datasets, weights, or industrial code are included.
+No confidential datasets, model weights, or industrial source code are included.
 
