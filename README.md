@@ -1,61 +1,185 @@
-# Safe & Explainable AI — Public Summary
+README — Safe & Explainable AI for Trajectory Prediction (Public Summary, 2025 Update)
 
-**Author:** Pouya Bathaie Pourmand  
-**Focus:** Reliable and interpretable neural models for safety-critical systems  
-**Status:** Ongoing MSc Research — Part of the REXASI-PRO project (Safe AI for autonomous wheelchairs)
+Author: Pouya Bathaie Pourmand
+Affiliation: MSc in Artificial Intelligence — University of Genoa / CNR Italy
+Project: REXASI-PRO — Reliable & Explainable AI for Smart Mobility
+Focus: Understanding and supervising neural trajectory-prediction models to ensure safety and robustness in autonomous mobility systems.
 
----
+1. Overview
 
-## Related Work
-- 🧠 *Safe and Explainable Trajectory Prediction for Smart Wheelchairs* — Mini research summary (this repository)  
-- 📘 *MSc Thesis (in progress): Interpretable AI Models for Safety Supervision*
+This repository contains a public summary of my MSc research on safe and explainable AI for trajectory prediction, with applications to smart wheelchairs and other mobile robots.
 
----
+The goal of the project is:
 
-## Project Overview
-This project investigates how to make neural network models more **reliable and understandable** when used in safety-critical systems such as **autonomous or smart wheelchairs**.  
-The main goal is to understand **when and why** a neural network might generate unsafe outputs and to design an interpretable supervisor that can **detect risky predictions before they cause unsafe behavior**.  
+to analyse when and why trajectory-prediction networks fail,
 
-Part of this work is being carried out within the **REXASI-PRO** research framework, which focuses on creating trustworthy and explainable AI for robotics and assistive mobility.  
-The neural models used in this study were **pre-trained by an industrial partner**, and the analysis was performed only on their **predicted trajectories** — no proprietary data or code is shared in this repository.
+to identify unsafe input conditions,
 
----
+and to design interpretable supervisors that detect risky outputs before the system behaves unsafely.
 
-## Method
-- Each input scenario is represented by three parameters: **orientation (θ)**, **linear velocity (v)**, and **rotational velocity (ω)**.  
-- The pre-trained neural networks predict a trajectory toward a target goal based on these parameters.  
-- The **Euclidean distance to the goal** is used to label each trajectory as “Success” or “Fail.”  
-- Because the dataset was imbalanced (more “Fail” cases), **SMOTE** was applied only on the training set to balance the classes.  
-- Then, **interpretable models** — *Decision Tree*, *Random Forest*, and *KNN* — were trained to identify unsafe cases and explain which input regions are likely to lead to unsafe motion.  
+The neural networks used here were pre-trained by an industrial partner.
+My work focuses solely on analysing their behaviour, stability, and failure modes — no proprietary datasets or models are shared.
 
----
+2. Problem Setting
 
-## Results and Insights
-- **Random Forest** achieved the most stable and balanced performance with around **98% accuracy**.  
-- **Decision Tree (depth=8)** reached about **97.5% accuracy**, generating clear and human-readable rules, though with slight overfitting.  
-- **KNN** achieved around **95% accuracy**, showing good generalization but a tendency to overpredict “Success.”  
-- The most important features for detecting unsafe trajectories were **Orientation (θ)** and **Linear Velocity (v)**, while **Rotational Velocity (ω)** had a smaller impact.  
+Each scenario is defined by three controllable inputs:
 
-These findings confirm that adding explainable models on top of deep networks can successfully identify risky inputs and improve trust in safety-critical systems.
+Orientation (θ)
 
----
+Linear velocity (v)
 
-## Applications
-This work demonstrates how **explainable and trustworthy AI** can support decision-making in autonomous systems such as smart wheelchairs, mobile robots, and industrial control units.  
-The same principles can be extended to **robotics, navigation, and safety monitoring**, where transparency and reliability are essential.
+Rotational velocity (ω)
 
----
+Given these parameters, a neural model predicts a trajectory toward a target goal.
+A prediction is labelled as:
 
-## Files in this Repository
-- `results/summary_table.csv` — success rates and average distances for each neural model  
-- `results/model_metrics.csv` — accuracy and precision of interpretable models  
-- `results/feature_importances.txt` — the most relevant input features  
-- `results/extracted_rules.txt` — examples of decision rules from the trained tree models  
-- `figures/` — visual summaries such as feature importance and confusion matrices  
+Success → final position close to the goal
 
----
+Failure → trajectory drifts away or diverges
 
-## Disclaimer
-This repository includes only **public-safe summaries and derived results**.  
-The original datasets, pre-trained models, and company-specific implementations are **confidential and not shared here**.  
-The content provided is for educational and demonstrative purposes to illustrate methodology and explainable analysis.
+This framework enables us to study how input conditions influence stability and safety.
+
+3. Experiments (2025 Update)
+Experiment 1 — Input Sensitivity (Fixed Goal)
+
+Purpose: Identify which input regions (θ, v, ω) are more likely to produce unsafe predictions.
+
+Key Findings:
+
+Orientation (θ) is the dominant risk factor.
+Failures sharply increase near ±π (robot facing backwards).
+
+Higher velocities or rotations have secondary influence.
+
+Model variability is strong:
+
+closs1 shows the largest deviations and most failures
+
+closs2 is consistently stable
+
+Even when failing, closs2 stays close to the goal (low failure distance).
+
+Outputs included:
+
+θ / v / ω vs final distance plots
+
+Success-rate bins for each input dimension
+
+Failure-distance distribution
+
+Associated CSV tables
+
+Experiment 2 — Goal Difficulty (Fixed Start)
+
+Purpose: Understand which goal positions are easy or difficult for the models.
+
+Key Findings:
+
+Goals at (0.5, 0.5) and (1.5, –0.5) produce almost 100% success across models.
+
+The goal at (1.0, 0.0) is significantly harder for every model.
+
+The difficulty map clearly separates safe vs challenging goal regions.
+
+Outputs included:
+
+Success heatmap per goal
+
+Difficulty map
+
+Summary tables
+
+Failure-Distance Analysis
+
+Beyond success/failure, we measure how severe a failure is.
+
+closs1 can diverge up to ~1 meter from the target
+
+closs2 remains within ~0.33 m → “near-correct” behaviour even in failed attempts
+
+This metric is crucial for safety monitoring, as not all failures are equally risky.
+
+4. Explainable AI Supervisor
+
+To interpret and classify neural outputs, the following ML models were trained:
+
+Decision Tree (depth=8)
+
+Random Forest
+
+KNN
+
+These models use only the input parameters (θ, v, ω) and the success labels generated from neural predictions.
+
+Performance summary:
+
+Random Forest: ~98% accuracy, most stable
+
+Decision Tree: ~97.5%, provides clear human-readable rules
+
+KNN: ~95%, slightly biased toward predicting Success
+
+Main contributing features:
+
+Orientation (θ)
+
+Linear Velocity (v)
+
+Rotational Velocity (ω) — lower impact
+
+These interpretable models help define risk zones and improve safety monitoring.
+
+5. Repository Contents
+results/
+    summary_table.csv
+    model_metrics.csv
+    feature_importances.txt
+    extracted_rules.txt
+
+trajectory_analysis/
+    exp1_input_sensitivity/
+        exp1_analysis.ipynb
+        theta_vs_distance.png
+        velocity_vs_distance.png
+        omega_vs_distance.png
+        failure_distance_boxplot.png
+        exp1_theta_bins.csv
+        exp1_velocity_bins.csv
+        exp1_omega_bins.csv
+
+    exp2_goal_difficulty/
+        exp2_analysis.ipynb
+        goal_success_heatmap.png
+        goal_difficulty_map.png
+        goal_success_table.csv
+
+    failure_distance_stats.csv
+
+figures/
+    (visual summaries, feature importance plots, confusion matrices, etc.)
+
+6. Applications
+
+The methods in this project support:
+
+Safe decision-making in smart wheelchairs
+
+Trajectory supervision in mobile robots
+
+Safety layers in navigation systems
+
+Model-monitoring and OOD detection pipelines
+
+The principles are general and apply to any system where trustworthy and interpretable AI is required.
+
+7. Disclaimer
+
+This repository includes only:
+
+High-level summaries
+
+Derived results
+
+Public-safe visualizations
+
+All proprietary datasets, weights, and internal implementations remain confidential.
