@@ -103,36 +103,39 @@ These highlight risk zones and improve system trust.
 
 ---
 
-## 5. Repository Contents
+## 📂 Repository Contents
 
-results/
-summary_table.csv
-model_metrics.csv
-feature_importances.txt
-extracted_rules.txt
+The project file structure is organized as follows:
 
-trajectory_analysis/
-exp1_input_sensitivity/
-exp1_analysis.ipynb
-theta_vs_distance.png
-velocity_vs_distance.png
-omega_vs_distance.png
-failure_distance_boxplot.png
-exp1_theta_bins.csv
-exp1_velocity_bins.csv
-exp1_omega_bins.csv
-
-exp2_goal_difficulty/
-    exp2_analysis.ipynb
-    goal_success_heatmap.png
-    goal_difficulty_map.png
-    goal_success_table.csv
-
-failure_distance_stats.csv
-
-figures/
-(feature importance, confusion matrices, etc.)
-
+```text
+.
+├── results/
+│   ├── summary_table.csv          # Aggregate metrics for all runs
+│   ├── model_metrics.csv          # Detailed performance metrics of the model
+│   ├── feature_importances.txt    # Ranked list of input features
+│   └── extracted_rules.txt        # Logical rules extracted from the model
+│
+├── trajectory_analysis/
+│   ├── exp1_input_sensitivity/
+│   │   ├── exp1_analysis.ipynb          # Notebook for input sensitivity analysis
+│   │   ├── theta_vs_distance.png        # Plot: Theta angle over distance
+│   │   ├── velocity_vs_distance.png     # Plot: Velocity profile over distance
+│   │   ├── omega_vs_distance.png        # Plot: Angular velocity over distance
+│   │   ├── failure_distance_boxplot.png # Distribution of failure distances
+│   │   ├── exp1_theta_bins.csv          # Binned data for theta analysis
+│   │   ├── exp1_velocity_bins.csv       # Binned data for velocity analysis
+│   │   └── exp1_omega_bins.csv          # Binned data for omega analysis
+│   │
+│   ├── exp2_goal_difficulty/
+│   │   ├── exp2_analysis.ipynb          # Notebook for goal difficulty analysis
+│   │   ├── goal_success_heatmap.png     # Visual heatmap of success rates
+│   │   ├── goal_difficulty_map.png      # Map visualizing difficulty zones
+│   │   └── goal_success_table.csv       # Raw data for success rates
+│   │
+│   └── failure_distance_stats.csv       # Overall statistical summary of failure distances
+│
+└── figures/
+    └── (feature importance, confusion matrices, etc.)
 
 ---
 
