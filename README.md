@@ -1,4 +1,5 @@
-# Safe & Explainable AI for Trajectory Prediction (Public Summary, 2025 Update)
+# Safe & Explainable AI for Trajectory Prediction 
+This README has been updated in 2025 to include the new experiments (Exp1 and Exp2) and failure-distance analysis
 
 **Author:** Pouya Bathaie Pourmand  
 **Affiliation:** MSc in Artificial Intelligence — University of Genoa / CNR Italy  
