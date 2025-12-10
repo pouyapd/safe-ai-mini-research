@@ -111,32 +111,29 @@ The project file structure is organized as follows:
 ```text
 .
 ├── results/
-│   ├── summary_table.csv
-│   ├── model_metrics.csv
-│   ├── feature_importances.txt
-│   └── extracted_rules.txt
+│   ├── tables/                       # All CSV outputs from Exp1 & Exp2
+│   │   ├── summary_avg_success.csv
+│   │   ├── combined_overview.csv
+│   │   ├── exp1_theta_sensitivity.csv
+│   │   ├── exp1_input_sensitivity_goal_1_0.csv
+│   │   ├── exp1_failure_distance_summary.csv
+│   │   ├── exp2_goal_summary_per_model.csv
+│   │   ├── exp2_goal_mean_over_models.csv
+│   │   └── exp1_bad_theta_bins.csv
+│   │
+│   ├── figures_exp1/                 # Key visualizations from Experiment 1
+│   │   ├── exp1_theta_vs_distance.png
+│   │   ├── exp1_velocity_vs_distance.png
+│   │   ├── exp1_omega_vs_distance.png
+│   │   ├── exp1_failure_distance_boxplot.png
+│   │   ├── exp1_theta_vs_goal_distance_success.png
+│   │   └── exp1_goal_theta_success_3d.png
+│   │
+│   └── figures_exp2/                 # Key visualizations from Experiment 2
+│       ├── exp2_goal_difficulty_map_avg.png
+│       └── exp2_success_heatmap.png
 │
-├── trajectory_analysis/
-│   ├── exp1_input_sensitivity/
-│   │   ├── exp1_analysis.ipynb
-│   │   ├── theta_vs_distance.png
-│   │   ├── velocity_vs_distance.png
-│   │   ├── omega_vs_distance.png
-│   │   ├── failure_distance_boxplot.png
-│   │   ├── exp1_theta_bins.csv
-│   │   ├── exp1_velocity_bins.csv
-│   │   └── exp1_omega_bins.csv
-│
-│   ├── exp2_goal_difficulty/
-│   │   ├── exp2_analysis.ipynb
-│   │   ├── goal_success_heatmap.png
-│   │   ├── goal_difficulty_map.png
-│   │   └── goal_success_table.csv
-│
-│   └── failure_distance_stats.csv
-│
-└── figures/
-    └── (feature importance, confusion matrices, etc.)
+└── figures/                          # Older/general project figures (optional)
 ```
 
 ## 6. Applications
