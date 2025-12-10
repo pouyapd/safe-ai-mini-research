@@ -8,7 +8,8 @@ This README has been updated in 2025 to include the new experiments (Exp1 and Ex
 
 ---
 
-![Goal Difficulty Map](results/figures_exp2/exp2_goal_difficulty_map_avg.png)
+![3D Safety Structure](results/figures_exp1/exp1_goal_theta_success_3d.png)
+*3D view of input–goal interactions showing success/failure regions in the model’s behavior.*
 
 ---
 
