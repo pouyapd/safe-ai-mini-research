@@ -133,7 +133,7 @@ The project file structure is organized as follows:
 │       ├── exp2_goal_difficulty_map_avg.png
 │       └── exp2_success_heatmap.png
 │
-└── figures/                          # Older/general project figures (optional)
+└── figures/                          # Older/general project figures
 ```
 
 ## 6. Applications
