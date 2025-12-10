@@ -8,6 +8,10 @@ This README has been updated in 2025 to include the new experiments (Exp1 and Ex
 
 ---
 
+![Goal Difficulty Map](results/figures_exp2/exp2_goal_difficulty_map_avg.png)
+
+---
+
 ## 1. Overview
 This repository contains a public summary of my MSc research on **safe and explainable AI for trajectory prediction**, with applications to smart wheelchairs and mobile robots.
 
