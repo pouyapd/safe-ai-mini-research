@@ -1,0 +1,6 @@
+Model,Samples,SuccessRate(%),AvgDist,NumFailures,Theta_fail_min,Theta_fail_max,Vel_fail_min,Vel_fail_max,Omega_fail_min,Omega_fail_max
+DNN_LNA_closs1,200,10.5,0.603,179,-3.107,3.059,-1.03,2.843,-1.947,1.989
+DNN_LNA_closs2,200,98.0,0.137,4,2.281,2.761,1.804,2.448,-0.302,0.735
+DNN_LNA_mse,200,76.5,0.228,47,-3.098,3.059,-1.03,2.733,-1.766,1.977
+DNN_LNA_on_wheel1,200,88.0,0.19,24,-3.107,-0.066,-0.41,2.65,-1.818,1.911
+DNN_LNA_sinu,200,64.5,0.261,71,-3.037,3.059,-1.03,2.843,-1.945,1.977
